@@ -29,18 +29,14 @@ const App = () => {
       <h2 className="text-center text-2xl font-bold mt-8 mb-6">About Us</h2>
       <div className="px-4 space-y-8">
         {/* Overview Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4">
-          {/* <h3 className="text-lg text-center font-semibold relative pb-1 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1px] after:bg-gray-300">
-          <span className="inline-block border-b-2 border-dotted border-gray-300">
-    Overview
-  </span>
-          </h3> */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 overflow-hidden">
+          
           <h3 className="text-lg text-center font-semibold relative pb-1">
   <span className="inline-block border-b-2 border-gray-300 transition-transform hover:scale-105">
     Overview
   </span>
 </h3>
-          <Card className="col-span-2 bg-yellow-100 transition-transform hover:scale-105">
+          <Card className="col-span-2 bg-yellow-100 transition-transform hover:scale-105 will-change-transform">
             <CardContent>
               <p>
                 Smile Harbor Foundation is a non-profit organization focused on
@@ -56,9 +52,9 @@ const App = () => {
         </div>
 
         {/* Mission Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 overflow-hidden ">
         <h3 className="text-lg text-center font-semibold relative pb-1 ">
-  <span className="inline-block border-b-2 border-gray-300 transition-transform hover:scale-105 ">
+  <span className="inline-block border-b-2 border-gray-300 transition-transform hover:scale-105 will-change-transform ">
    Mission
   </span>
 </h3>
