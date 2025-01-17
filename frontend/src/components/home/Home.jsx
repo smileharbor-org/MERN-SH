@@ -2,9 +2,9 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card"; // Update the import path based on your setup
 import Carousel from "react-material-ui-carousel"; // Replace this if you're switching to a different carousel library
-import image1 from "../../assets/image1.jpg";
-import image2 from "../../assets/image2.jpg";
-import image3 from "../../assets/image3.jpg";
+import image1 from "../../assets/image1.webp";
+import image2 from "../../assets/image2.webp";
+import image3 from "../../assets/image3.webp";
 
 const App = () => {
   const images = [image1, image2, image3];
@@ -32,7 +32,7 @@ const App = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 overflow-hidden">
           
           <h3 className="text-lg text-center font-semibold relative pb-1">
-  <span className="inline-block border-b-2 border-gray-300 transition-transform hover:scale-105">
+  <span className="inline-block border-b-2 border-gray-300 ">
     Overview
   </span>
 </h3>
@@ -54,11 +54,11 @@ const App = () => {
         {/* Mission Section */}
         <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 overflow-hidden ">
         <h3 className="text-lg text-center font-semibold relative pb-1 ">
-  <span className="inline-block border-b-2 border-gray-300 transition-transform hover:scale-105 will-change-transform ">
+  <span className="inline-block border-b-2 border-gray-300 ">
    Mission
   </span>
 </h3>
-          <Card className="col-span-2 bg-pink-100 transition-transform hover:scale-105">
+          <Card className="col-span-2 bg-pink-100 transition-transform hover:scale-105 will-change-transform ">
             <CardContent>
               <p>
                 To bring smiles and hope to every life we touch, Smile Harbor
