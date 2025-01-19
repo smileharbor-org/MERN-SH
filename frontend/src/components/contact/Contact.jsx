@@ -7,7 +7,7 @@ import {
   CardFooter,
 } from "@/components/ui/card"  // card
 import { Button } from '@/components/ui/button'  // button
-import bg from "./image/bg2.jpg"
+import bg from "./image/bg.jpg"
 function Contact() {
   return (
     <>
@@ -25,13 +25,7 @@ function Contact() {
             Small acts of kindness lead to big changes.
           </p>
           <h4 className='text-[20px] sm:text-[20px] md:text-[20px]  lg:text-[24px] font-semibold p-1'>Let’s connect and create change together.</h4>
-          {/* sample bg -> image */}
-          <img 
-            src="https://img.freepik.com/premium-vector/kindness-landing-page-flat-design_98292-25564.jpg"
-            width={400}
-            height={400}
-            className='rounded-lg p-1'
-          />
+          
         </div>
         <Card className='w-[350px] lg:w-[500px] h-min py-6'>
           <form > {/*Form  */}
