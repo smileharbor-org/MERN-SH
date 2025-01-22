@@ -4,13 +4,8 @@ const app = express()
 const GalleryRoute = require("./routes/galleryRoutes") // import gallery route
 const port = 3000
 const cors = require("cors")  // cross origin
-const cloudinary = require("cloudinary").v2
 
-cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME,
-    api_key: process.env.API_KEY,
-    api_secret: process.env.API_SECRET
-})
+
 
 app.use(cors({
     origin:"http://localhost:5173",
