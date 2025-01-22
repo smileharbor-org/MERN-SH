@@ -10,7 +10,7 @@ function Gallery() {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/cloudinary-images');
+      const response = await axios.get('http://localhost:3000/gallery');
       const imageUrls = response.data.map(image => image.secure_url);
       setImages(imageUrls);
     } catch (error) {
