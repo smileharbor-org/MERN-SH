@@ -1,3 +1,8 @@
+const axios = require("axios")
+const CLOUD_NAME = process.env.CLOUD_NAME
+const API_KEY = process.env.API_KEY
+const API_SECRET = process.env.API_SECRET
+
 const gallery = async(req,res) => {
     try {
         const response = await axios.get(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/resources/image`, {
