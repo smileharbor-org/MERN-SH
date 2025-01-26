@@ -21,7 +21,7 @@ const App = () => {
               key={index}
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-[800px] object-cover"
+              className="w-full h-full object-cover"
             />
           ))}
         </Carousel>
