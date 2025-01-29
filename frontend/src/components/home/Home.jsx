@@ -14,14 +14,14 @@ const App = () => {
   return (
     <div className="bg-gradient-to-b from-blue-50 via-pink-50 to-yellow-50">
       {/* Carousel Section */}
-      <div className="mt-4">
+      <div className="mt-4 ">
         <Carousel>
           {images.map((image, index) => (
             <img
               key={index}
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-[80vh] object-cover"
             />
           ))}
         </Carousel>
