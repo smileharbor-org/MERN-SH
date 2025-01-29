@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function Gallery() {
   const [images, setImages] = useState([]);
@@ -10,8 +10,12 @@ function Gallery() {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/gallery');
-      const imageUrls = response.data.map(image => image.secure_url);
+      const response = await axios.get("http://localhost:3000/gallery");
+      const imageUrls = response.data.map((image, index) => ({
+        id: image._id || index ,
+        url: image.secure_url,
+      }));
+      console.log(imageUrls);
       setImages(imageUrls);
     } catch (error) {
       console.error("Error fetching images:", error);
@@ -19,51 +23,20 @@ function Gallery() {
   };
 
   return (
-    <>
-      <div className='w-full h-min flex justify-center items-center'>
-        <h1 >Gallery</h1>
-      </div>
-      <div>
-        <div
-          className="flex flex-wrap gap-4 p-4"
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "10px",
-            justifyContent: "center",
-          }}
-        >
-          {images.map((imageUrl, index) => (
-            <div
-              key={index}
-              style={{
-                border: "1px solid grey",
-                borderRadius: "10px",
-                overflow: "hidden", 
-                width: "230px", 
-                height: "230px",
-              }}
-            >
-              <picture>
-                <source srcSet={imageUrl} type='image/jpg' />
-                <img
-                  src={imageUrl}
-                  alt={` ${index}`}
-                  loading='lazy'
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
-                />
-              </picture>
-
+    <div className="min-h-screen bg-gradient-to-r from-blue-100 via-pink-100 to-yellow-100 py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl font-bold mb-4">Gallery</h2>
+        </div>
+        <div className="grid grid-cols-1 place-items-center md:grid-cols-3 gap-10 mx-auto md:px-8 w-full">
+          {images.map((image) => (
+            <div key={image.id} className=" rounded-lg overflow-hidden w-[300px] ">
+              <img src={image.url} alt="Gallery" className="w-full h-[400px] object-fit" />
             </div>
           ))}
         </div>
       </div>
-    </>
-
+    </div>
   );
 }
 
