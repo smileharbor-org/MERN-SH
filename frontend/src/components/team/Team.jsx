@@ -1,6 +1,6 @@
 //new
 import React from "react";
-import FocusCards from "@/components/ui/focus-cards";
+import FocusCards from "../ui/focus-cards";
 
 const teamMembers = [
   {
