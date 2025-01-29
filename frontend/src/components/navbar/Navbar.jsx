@@ -13,7 +13,7 @@ function Navbar() {
 
       {/* Navigation Items */}
       <nav>
-        <ul className="flex space-x-6 text-md">
+        <ul className="flex space-x-6 text-md  items-center">
           <li>
             <NavLink
               to="/"
@@ -65,7 +65,7 @@ function Navbar() {
           <li>
             <button
               onClick={() => navigate('/donate')} // Navigate to /donate
-              className="bg-pink-400 text-center text-white px-4 py- rounded hover:bg-pink-500 transition-all"
+              className="bg-pink-400 text-center text-white px-4 py-1 rounded hover:bg-pink-500 transition-all"
             >
               Donate
             </button>
