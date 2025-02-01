@@ -87,7 +87,7 @@ function Contact() {
                   placeholder="Email" />
               </div>
               <div>
-                <Label>Reason for Contact</Label>
+                <Label htmlFor="reasonForContact" className="text-[16px] lg:text-[24px]" >Reason for Contact</Label>
                 <select
                   name="reasonForContact"
                   value={reasonForContact}
