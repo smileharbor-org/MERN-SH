@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card"; // Update the import path based on your setup
 import { Badge } from "@/components/ui/badge";
