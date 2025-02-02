@@ -1,10 +1,11 @@
+//new
 import React from "react";
-import FocusCards from "@/components/ui/focus-cards";
+import FocusCards from "../ui/focus-cards";
 
 const teamMembers = [
   {
     name: "Sarah Johnson",
-    role: "Founder",
+    role: "CEO & Founder",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&h=400&fit=crop",
   },
