@@ -95,7 +95,7 @@ function Navbar() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative z-30 bg-white">
       <div className="flex justify-between items-center py-4 px-6">
         {/* Logo */}
         <div>
