@@ -1,6 +1,8 @@
 import { lazy, StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
+import './index.css';
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Contact from './components/contact/Contact.jsx'
 import Team from './components/team/Team.jsx'
