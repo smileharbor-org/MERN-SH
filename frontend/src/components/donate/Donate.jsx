@@ -84,16 +84,7 @@ function Donate() {
   return (
     <>
 
-      <div className="absolute top-0 left-0 w-full h-full z-0" >
-        <video
-          autoPlay
-          loop
-          muted
-          className="w-full h-full object-cover"
-        >
-          <source src={video} type="video/mp4" />
-        </video>
-      </div>
+      
       <div className='flex justify-around items-center flex-col lg:flex-row  h-screen relative z-20 '
       >
         <h2 className='text-[24px] sm:text-[21px] md:text-[22px] lg:text-[32px] max-w-[350px] font-bold'>
