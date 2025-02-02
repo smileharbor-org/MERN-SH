@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card"; // Update the import path based on your setup
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "../ui/card"; // Update the import path based on your setup
+import { Badge } from "../ui/badge";
 import Carousel from "react-material-ui-carousel"; // Replace this if you're switching to a different carousel library
 import image1 from "../../assets/image1.webp";
 import image2 from "../../assets/image2.webp";
