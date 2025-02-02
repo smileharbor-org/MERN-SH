@@ -85,7 +85,7 @@ function Donate() {
     <>
 
       
-      <div className='flex justify-around items-center flex-col lg:flex-row  h-screen relative z-20 '
+      <div className='flex justify-around items-center flex-col lg:flex-row  h-min my-4 relative z-20 '
       >
         <h2 className='text-[24px] sm:text-[21px] md:text-[22px] lg:text-[32px] max-w-[350px] font-bold'>
           Your small contribution today can create a big impact tomorrow.
