@@ -27,34 +27,37 @@ function Contact() {
   const HandleForm = async (e) => {
     e.preventDefault()
     if (!FullName) {
-      enqueueSnackbar("Full Name is required", { variant: "error",
+      enqueueSnackbar("Full Name is required", {
+        variant: "error",
         anchorOrigin: {
           vertical: 'top',
           horizontal: 'right',
         },
-        autoHideDuration:2000
+        autoHideDuration: 2000
       });
       return;
     }
     if (!email) {
-      enqueueSnackbar("Email is required", { variant: "error",
+      enqueueSnackbar("Email is required", {
+        variant: "error",
         anchorOrigin: {
           vertical: 'top',
           horizontal: 'right',
         },
-        autoHideDuration:2000
+        autoHideDuration: 2000
 
-       });
+      });
       return;
     }
     if (!reasonForContact || reasonForContact === "Select a reason") {
-      enqueueSnackbar("Please select a reason for contact", { variant: "error", anchorOrigin: {
-        vertical: 'top',
-        horizontal: 'right',
-      } ,
-      autoHideDuration:2000
+      enqueueSnackbar("Please select a reason for contact", {
+        variant: "error", anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'right',
+        },
+        autoHideDuration: 2000
 
-    });
+      });
       return;
     }
     if (!message) {
@@ -64,7 +67,7 @@ function Contact() {
           vertical: 'top',
           horizontal: 'right',
         },
-        autoHideDuration:2000
+        autoHideDuration: 2000
 
       });
       return;
@@ -78,7 +81,13 @@ function Contact() {
         body: JSON.stringify([[FullName, email, reasonForContact, message, new Date().toLocaleString()]])
       })
       const display = await result.json()
-      console.log(display)
+      enqueueSnackbar("Successfully Sent", {
+        variant: "success", anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'right',
+        },
+        autoHideDuration: 2000
+      });
       SetFormData({
         FullName: "",
         email: "",
