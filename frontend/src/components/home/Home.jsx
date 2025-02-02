@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card"; // Update the import path based on your setup
 import { Badge } from "@/components/ui/badge";
@@ -21,7 +20,7 @@ const App = () => {
               key={index}
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-[80vh] object-cover"
+              className="w-full h-[50vh] sm:h-[80vh] object-cover"
             />
           ))}
         </Carousel>
@@ -29,7 +28,7 @@ const App = () => {
 
       {/* About Us Section */}
       <h2 className="text-center text-2xl font-bold mt-8 mb-6">About Us</h2>
-      <div className="px-4 space-y-8">
+      <div className="max-w-7xl px-4 space-y-8">
         {/* Overview Section */}
         <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 overflow-hidden">
           
