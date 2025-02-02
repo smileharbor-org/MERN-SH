@@ -8,7 +8,6 @@ function App() {
   const location = useLocation()
   return (
     <>
-
       <Navbar />
       {location.pathname === "/" && <Home />}
       <Outlet />
