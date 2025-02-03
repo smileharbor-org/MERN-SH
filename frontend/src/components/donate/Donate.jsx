@@ -200,7 +200,7 @@ function Donate() {
   }
   return (
     <>
-      <div className='flex justify-center gap-y-7 lg:gap-0 lg:justify-around items-center flex-col lg:flex-row h-min lg:h-screen relative z-20 '
+      <div className='flex justify-center gap-y-7 lg:gap-0 lg:justify-around items-center flex-col lg:flex-row h-min lg:h-min my-4 relative z-20 '
       >
         <h2 className='text-[24px] sm:text-[21px] md:text-[22px] lg:text-[32px] max-w-[390px] font-bold'>
           If you wish to donate, please fill out the form below, and our team will reach out to you with the next steps.

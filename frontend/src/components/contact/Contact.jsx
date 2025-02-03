@@ -164,7 +164,7 @@ function Contact() {
 
         }}
       >
-        <div className='flex flex-col  '>
+        <div className='flex flex-col '>
           <p className=' text-[20px] sm:text-[20px] md:text-[20px] lg:text-[32px] font-bold p-1 text-left'>
             Small acts of kindness lead to big changes.
           </p>
@@ -172,7 +172,7 @@ function Contact() {
 
         </div>
         <SnackbarProvider maxSnack={30}>  {/**Notifications */}
-          <Card className='w-[350px] lg:w-[500px] h-min py-6'>
+          <Card className='w-[350px] lg:w-[500px] h-min py-6 my-4'>
             <form onSubmit={HandleForm}> {/*Form  */}
               <CardContent>
                 <div className="grid w-full  items-center gap-2 my-5">
