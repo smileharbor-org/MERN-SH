@@ -109,11 +109,11 @@ function Contact() {
 
         }}
       >
-        <div className='flex flex-col items-center'>
-          <p className=' text-[20px] sm:text-[20px] md:text-[20px] lg:text-[32px] font-bold p-1'>
+        <div className='flex flex-col  '>
+          <p className=' text-[20px] sm:text-[20px] md:text-[20px] lg:text-[32px] font-bold p-1 text-left'>
             Small acts of kindness lead to big changes.
           </p>
-          <h4 className='text-[20px] sm:text-[20px] md:text-[20px]  lg:text-[24px] font-semibold p-1'>Let’s connect and create change together.</h4>
+          <h4 className='text-[20px] sm:text-[20px] md:text-[20px]  lg:text-[24px] font-semibold p-1 text-left'>Let’s connect and create change together.</h4>
 
         </div>
         <SnackbarProvider maxSnack={30}>  {/**Notifications */}
