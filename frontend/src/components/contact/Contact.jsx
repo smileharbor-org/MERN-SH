@@ -8,27 +8,31 @@ import {
 } from "@/components/ui/card"  // card
 import { Button } from '@/components/ui/button'  // button
 import bg from "./image/bg.jpg"
-import { VITE_GOOGLE_SHEETS_API } from "../../config"
+import { VITE_GOOGLE_SHEETS_API,VITE_SERVICE_ID,VITE_PUBLIC_KEY,VITE_EMAILJS_TEMPLATE } from "../../config"
 import { SnackbarProvider, enqueueSnackbar } from 'notistack'
+import emailjs from '@emailjs/browser';
+
 function Contact() {
   const [formData, SetFormData] = useState({
-    FullName: "",
+    fullname: "",
     email: "",
+    number: "",
     reasonForContact: "",
     message: ""
   })
-  const { FullName, email, reasonForContact, message } = formData
+  const { fullname, email, reasonForContact, message, number } = formData
   const HandleChange = (e) => {
-    SetFormData({ ...formData, [e.target.name]: e.target.value })
+    SetFormData({ ...formData, [e.target.name]: e.target.value || "" })
   }
 
   //Submit 
 
   const HandleForm = async (e) => {
     e.preventDefault()
-    if (!FullName) {
+    const emailVerification = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // regEx for email verification
+    if (!fullname) {
       enqueueSnackbar("Full Name is required", {
-        variant: "error",
+        variant: "warning",
         anchorOrigin: {
           vertical: 'top',
           horizontal: 'right',
@@ -39,7 +43,7 @@ function Contact() {
     }
     if (!email) {
       enqueueSnackbar("Email is required", {
-        variant: "error",
+        variant: "warning",
         anchorOrigin: {
           vertical: 'top',
           horizontal: 'right',
@@ -49,9 +53,31 @@ function Contact() {
       });
       return;
     }
+    if (!emailVerification.test(email)) {
+      enqueueSnackbar("Enter Your Correct Email", {
+        variant: "warning",
+        autoHideDuration: 2000,
+        anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'right',
+        }
+      })
+      return
+    }
+    if (number.length > 11 || number.length < 10) {
+      enqueueSnackbar("Enter Correct Mobile Number", {
+        variant: "warning",
+        autoHideDuration: 2000,
+        anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'right',
+        }
+      })
+      return
+    }
     if (!reasonForContact || reasonForContact === "Select a reason") {
       enqueueSnackbar("Please select a reason for contact", {
-        variant: "error", anchorOrigin: {
+        variant: "warning", anchorOrigin: {
           vertical: 'top',
           horizontal: 'right',
         },
@@ -62,7 +88,7 @@ function Contact() {
     }
     if (!message) {
       enqueueSnackbar("Message cannot be empty", {
-        variant: "error",
+        variant: "warning",
         anchorOrigin: {
           vertical: 'top',
           horizontal: 'right',
@@ -78,24 +104,53 @@ function Contact() {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify([[FullName, email, reasonForContact, message, new Date().toLocaleString()]])
+        body: JSON.stringify([[fullname, email, reasonForContact, message, new Date().toLocaleString()]])
       })
-      const display = await result.json()
-      enqueueSnackbar("Successfully Sent", {
-        variant: "success", anchorOrigin: {
-          vertical: 'top',
-          horizontal: 'right',
-        },
-        autoHideDuration: 2000
-      });
-      SetFormData({
-        FullName: "",
-        email: "",
-        reasonForContact: "",
-        message: ""
-      })
+      emailjs.send(
+        VITE_SERVICE_ID,
+        VITE_EMAILJS_TEMPLATE,
+        formData,
+        VITE_PUBLIC_KEY
+      )
+        .then(() => {
+          enqueueSnackbar("Successfully Sent.Thank You!!", {
+            variant: "success", anchorOrigin: {
+              vertical: 'top',
+              horizontal: 'right',
+            },
+            autoHideDuration: 2000
+          });
+          SetFormData({
+            FullName: "",
+            email: "",
+            reasonForContact: "",
+            message: ""
+          })
+        })
+        .catch((e) => {
+          if (e) {
+            enqueueSnackbar("Network Problem. Try Again", {
+              variant: "error", anchorOrigin: {
+                vertical: 'top',
+                horizontal: 'right',
+              },
+              autoHideDuration: 2000
+            });
+          }
+
+        })
+
+
     } catch (error) {
-      console.log(error)
+      if (e) {
+        enqueueSnackbar("Network Problem. Try Again", {
+          variant: "error", anchorOrigin: {
+            vertical: 'top',
+            horizontal: 'right',
+          },
+          autoHideDuration: 2000
+        });
+      }
     }
   }
   return (
@@ -109,11 +164,11 @@ function Contact() {
 
         }}
       >
-        <div className='flex flex-col items-center'>
-          <p className=' text-[20px] sm:text-[20px] md:text-[20px] lg:text-[32px] font-bold p-1'>
+        <div className='flex flex-col  '>
+          <p className=' text-[20px] sm:text-[20px] md:text-[20px] lg:text-[32px] font-bold p-1 text-left'>
             Small acts of kindness lead to big changes.
           </p>
-          <h4 className='text-[20px] sm:text-[20px] md:text-[20px]  lg:text-[24px] font-semibold p-1'>Let’s connect and create change together.</h4>
+          <h4 className='text-[20px] sm:text-[20px] md:text-[20px]  lg:text-[24px] font-semibold p-1 text-left'>Let’s connect and create change together.</h4>
 
         </div>
         <SnackbarProvider maxSnack={30}>  {/**Notifications */}
@@ -121,32 +176,39 @@ function Contact() {
             <form onSubmit={HandleForm}> {/*Form  */}
               <CardContent>
                 <div className="grid w-full  items-center gap-2 my-5">
-                  <Label htmlFor="email" className="text-[16px] lg:text-[24px]">FullName</Label>
+                  <Label htmlFor="email" className="text-[16px] lg:text-[24px]">Full Name</Label>
                   <Input
                     type="text"
-                    id="FullName"
-                    name="FullName"
-                    value={FullName}
+                    id="fullName"
+                    name="fullname"
+                    value={fullname || ""}
                     onChange={HandleChange}
-                    placeholder="FullName" />
+                    placeholder="Enter Full Name" />
                 </div>
                 <div className="grid w-full  items-center gap-2 my-5">
                   <Label htmlFor="email" className="text-[16px] lg:text-[24px]">Email</Label>
                   <Input
                     type="email"
                     name="email"
-                    value={email}
+                    value={email || ""}
                     onChange={HandleChange}
-
-                    placeholder="Email" />
+                    placeholder="Enter Email" />
+                </div>
+                <div className="grid w-full  items-center gap-2 my-5">
+                  <Label htmlFor="number" className="text-[16px] lg:text-[24px]">Contact Number</Label>
+                  <Input
+                    type="text"
+                    name="number"
+                    value={number || ""}
+                    onChange={HandleChange}
+                    placeholder="Enter Mobile Number" />
                 </div>
                 <div>
                   <Label htmlFor="reasonForContact" className="text-[16px] lg:text-[24px]" >Reason for Contact</Label>
                   <select
                     name="reasonForContact"
-                    value={reasonForContact}
+                    value={reasonForContact || ""}
                     onChange={HandleChange}
-
                     className="border rounded-sm w-full p-2 bg-white"
                     required
                   >
@@ -161,13 +223,11 @@ function Contact() {
                   <textarea
                     rows={5}
                     type="text"
-
                     name='message'
-                    value={message}
+                    value={message ||""}
                     onChange={HandleChange}
-
-                    placeholder="Message"
-                    className='border rounded-sm' />
+                    placeholder="Enter Message"
+                    className='border rounded-sm p-2' />
                 </div>
               </CardContent>
               <CardFooter>
@@ -176,9 +236,7 @@ function Contact() {
             </form>
           </Card>
         </SnackbarProvider>
-
       </div>
-
     </>
   )
 }
