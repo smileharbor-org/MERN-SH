@@ -8,11 +8,10 @@ import {
   CardTitle,
 } from "@/components/ui/card"  // card
 import { Button } from '@/components/ui/button'  // button
-import { IndianRupee } from 'lucide-react';
-// import video from "./contents/donate.mp4"
 import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 // import {VITE_RAZORPAT_SECRET,VITE_RAZORPAY_KEY} from "../../config"
-import {VITE_GOOGLE_DONATION} from "../../config"
+import { VITE_GOOGLE_DONATION, VITE_EMAILJS_TEMPLATE, VITE_SERVICE_ID, VITE_PUBLIC_KEY } from "../../config"
+import emailjs from '@emailjs/browser';
 
 function Donate() {
   const [DataValues, SetDataValues] = useState({
@@ -26,7 +25,7 @@ function Donate() {
     SetDataValues({ ...DataValues, [e.target.name]: e.target.value })
   }
   //Function for Submit Pay
-  const HandleSubmit = async(e) => {
+  const HandleSubmit = async (e) => {
     e.preventDefault()
     const emailVerification = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!fullname) {
@@ -92,20 +91,23 @@ function Donate() {
     try {
       const DateTime = new Date().toLocaleString()
       const FormData = {
-        TimeStamp:DateTime,...DataValues
+        TimeStamp: DateTime, ...DataValues
       }
       const res = await fetch(VITE_GOOGLE_DONATION, {
         method: "POST",
-        headers: { "Content-Type": "application/json",
-          Accept:"application/json"
-         },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
         body: JSON.stringify(FormData),
-        
+
       });
-  
-      const data = await res.json();
-      console.log(data)
-      if (data){
+      emailjs.send(
+        VITE_SERVICE_ID,
+        VITE_EMAILJS_TEMPLATE,
+        DataValues,
+        VITE_PUBLIC_KEY
+      ).then(() => {
         enqueueSnackbar("Thank you for donation request. We get back to you", {
           variant: "success",
           autoHideDuration: 2000,
@@ -114,19 +116,30 @@ function Donate() {
             horizontal: 'right',
           }
         })
-      }else {
-        enqueueSnackbar("Submission Failed.Try Again", {
-          variant: "warning",
-          autoHideDuration: 2000,
-          anchorOrigin: {
-            vertical: 'top',
-            horizontal: 'right',
+        SetDataValues({
+          fullname: "",
+          email: "",
+          number: "",
+          message: ""
+        })
+      })
+        .catch((e) => {
+          if (e) {
+            enqueueSnackbar("Submission Failed.Try Again", {
+              variant: "warning",
+              autoHideDuration: 2000,
+              anchorOrigin: {
+                vertical: 'top',
+                horizontal: 'right',
+              }
+            })
           }
         })
-      }
+      const data = await res.json();
+      console.log(data)
 
     } catch (error) {
-      console.log(error)
+     
       if (error) {
         enqueueSnackbar("Try Again Later", {
           variant: "warning",
@@ -187,21 +200,10 @@ function Donate() {
   }
   return (
     <>
-
-      {/* <div className="absolute top-0 left-0 w-full h-full z-0" >
-        <video
-          autoPlay
-          loop
-          muted
-          className="w-full h-full object-cover"
-        >
-          <source src={video} type="video/mp4" />
-        </video>
-      </div> */}
-      <div className='flex justify-around items-center flex-col lg:flex-row  h-screen relative z-20 '
+      <div className='flex justify-center gap-y-7 lg:gap-0 lg:justify-around items-center flex-col lg:flex-row h-min lg:h-screen relative z-20 '
       >
-        <h2 className='text-[24px] sm:text-[21px] md:text-[22px] lg:text-[32px] max-w-[350px] font-bold'>
-          Your small contribution today can create a big impact tomorrow.
+        <h2 className='text-[24px] sm:text-[21px] md:text-[22px] lg:text-[32px] max-w-[390px] font-bold'>
+          If you wish to donate, please fill out the form below, and our team will reach out to you with the next steps.
         </h2>
         <SnackbarProvider maxSnack={3}>
           <Card className='border w-[370px] lg:w-[500px] h-min py-6'>
@@ -218,6 +220,7 @@ function Donate() {
                     name="fullname"
                     type="text"
                     onChange={HandleChange}
+                    placeholder="Enter Name"
                   />
                 </div>
                 <div className="grid w-full  items-center gap-2 my-5">
@@ -228,6 +231,7 @@ function Donate() {
                     name="email"
                     value={email}
                     onChange={HandleChange}
+                    placeholder="Enter Email"
                   />
                 </div>
                 <div className="grid w-full  items-center gap-2 my-5">
@@ -238,6 +242,7 @@ function Donate() {
                     name="number"
                     value={number}
                     onChange={HandleChange}
+                    placeholder="Enter Mobile Number"
                   />
                 </div>
                 <div className="grid w-full  items-center gap-2 my-5">
@@ -245,14 +250,20 @@ function Donate() {
                   <textarea
                     rows={5}
                     type="text"
-                    className=' border rounded-sm'
+                    className=' border rounded-sm p-2'
                     id="message"
                     name="message"
                     value={message}
                     onChange={HandleChange}
+                    placeholder="Enter Message"
                   />
                 </div>
-                <h4 className='text-[12px] font-bold'>* Currently we not accepting donation.Shortly we get back to you.</h4>
+                <h4 className='text-[12px] font-bold'>
+                  <span className='text-red-500'>
+                    Please note:
+                  </span> We are not currently accepting donations through the website.
+                  However, we will get in touch with you soon to assist with your contribution.
+                </h4>
               </CardContent>
               <CardFooter >
                 <Button type="submit" className="w-full">Send</Button>
