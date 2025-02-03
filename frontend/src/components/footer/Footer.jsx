@@ -16,13 +16,13 @@ function Footer() {
   ]
   return (
     <>
-      <div className='h-[20vh] w-full bg-[#0c0c14] grid content-center gap-y-2'>
-        <div className='flex justify-center items-center gap-x-9'>
+      <div className=' h-min lg:h-[20vh] w-full bg-[#0c0c14] grid content-center gap-y-2 p-2'>
+        <div className='flex justify-center items-center gap-x-9 p-2'>
           {/* mapping objects */}
           {
             footerIcons.map((el, i) => {
               return (
-                <Link to={el.to} aria-label={el.name} key={i} className='text-3xl text-white'>
+                <Link to={el.to} aria-label={el.name} target='_blank' key={i} className='text-3xl text-white'>
                   {el.icon}
                 </Link>
               )
@@ -30,10 +30,10 @@ function Footer() {
           }
         </div>
         {/* Copyright content*/}
-        <h1 className='text-center  text-[14px] text-white'>
+        <h1 className='text-center text-[12px] lg:text-[14px] text-white'>
           &#169; 2024 Smile Harbor Foundation
         </h1>
-        <h1 className='text-center  text-[14px] text-white'>
+        <h1 className='text-center text-[12px]  lg:text-[14px] text-white'>
           Registered with NGO Darpan (CG/2023/0348232) Registrars of Firm & Scoieties (122202327759)
         </h1>
 
