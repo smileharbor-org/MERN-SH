@@ -14,21 +14,23 @@ function Contact() {
   const [formData, SetFormData] = useState({
     FullName: "",
     email: "",
+    number: "",
     reasonForContact: "",
     message: ""
   })
-  const { FullName, email, reasonForContact, message } = formData
+  const { FullName, email, reasonForContact, message, number } = formData
   const HandleChange = (e) => {
-    SetFormData({ ...formData, [e.target.name]: e.target.value })
+    SetFormData({ ...formData, [e.target.name]: e.target.value||"" })
   }
 
   //Submit 
 
   const HandleForm = async (e) => {
     e.preventDefault()
+    const emailVerification = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // regEx for email verification
     if (!FullName) {
       enqueueSnackbar("Full Name is required", {
-        variant: "error",
+        variant: "warning",
         anchorOrigin: {
           vertical: 'top',
           horizontal: 'right',
@@ -39,7 +41,7 @@ function Contact() {
     }
     if (!email) {
       enqueueSnackbar("Email is required", {
-        variant: "error",
+        variant: "warning",
         anchorOrigin: {
           vertical: 'top',
           horizontal: 'right',
@@ -49,9 +51,31 @@ function Contact() {
       });
       return;
     }
+    if (!emailVerification.test(email)) {
+      enqueueSnackbar("Enter Your Correct Email", {
+        variant: "warning",
+        autoHideDuration: 2000,
+        anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'right',
+        }
+      })
+      return
+    }
+    if (number.length > 11 || number.length < 10) {
+      enqueueSnackbar("Enter Correct Mobile Number", {
+        variant: "warning",
+        autoHideDuration: 2000,
+        anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'right',
+        }
+      })
+      return
+    }
     if (!reasonForContact || reasonForContact === "Select a reason") {
       enqueueSnackbar("Please select a reason for contact", {
-        variant: "error", anchorOrigin: {
+        variant: "warning", anchorOrigin: {
           vertical: 'top',
           horizontal: 'right',
         },
@@ -62,7 +86,7 @@ function Contact() {
     }
     if (!message) {
       enqueueSnackbar("Message cannot be empty", {
-        variant: "error",
+        variant: "warning",
         anchorOrigin: {
           vertical: 'top',
           horizontal: 'right',
@@ -81,6 +105,7 @@ function Contact() {
         body: JSON.stringify([[FullName, email, reasonForContact, message, new Date().toLocaleString()]])
       })
       const display = await result.json()
+      console.log(display)
       enqueueSnackbar("Successfully Sent", {
         variant: "success", anchorOrigin: {
           vertical: 'top',
@@ -126,7 +151,7 @@ function Contact() {
                     type="text"
                     id="FullName"
                     name="FullName"
-                    value={FullName}
+                    value={FullName ||""}
                     onChange={HandleChange}
                     placeholder="FullName" />
                 </div>
@@ -135,16 +160,26 @@ function Contact() {
                   <Input
                     type="email"
                     name="email"
-                    value={email}
+                    value={email ||""}
                     onChange={HandleChange}
 
                     placeholder="Email" />
+                </div>
+                <div className="grid w-full  items-center gap-2 my-5">
+                  <Label htmlFor="number" className="text-[16px] lg:text-[24px]">Contact Number</Label>
+                  <Input
+                    type="text"
+                    name="number"
+                    value={number||""}
+                    onChange={HandleChange}
+
+                    placeholder="Mobile Number" />
                 </div>
                 <div>
                   <Label htmlFor="reasonForContact" className="text-[16px] lg:text-[24px]" >Reason for Contact</Label>
                   <select
                     name="reasonForContact"
-                    value={reasonForContact}
+                    value={reasonForContact ||""}
                     onChange={HandleChange}
 
                     className="border rounded-sm w-full p-2 bg-white"
@@ -163,7 +198,7 @@ function Contact() {
                     type="text"
 
                     name='message'
-                    value={message}
+                    value={message||""}
                     onChange={HandleChange}
 
                     placeholder="Message"
