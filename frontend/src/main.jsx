@@ -4,12 +4,12 @@ import App from './App.jsx'
 import './index.css';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Contact from './components/contact/Contact.jsx'
-import Team from './components/team/Team.jsx'
-import Gallery from './components/gallery/Gallery.jsx'
 import Loader from './components/errorpage/Loader.jsx'
 const Donate = lazy(() => import("./components/donate/Donate.jsx"))
 const Notfound = lazy(() => import("./components/errorpage/Notfound.jsx"))
+const Gallery = lazy(()=>import('./components/gallery/Gallery.jsx'))
+const Contact = lazy(() =>import('./components/contact/Contact.jsx'))
+const Team = lazy(()=>import('./components/team/Team.jsx'))
 
 
 createRoot(document.getElementById('root')).render(
