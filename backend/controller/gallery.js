@@ -10,8 +10,8 @@ const gallery = async (req, res) => {
 
     const response = await axios.get(url, {
       params: {
-        expression: `folder:Gallery`, // Search images in the "Team" folder
-        max_results: 30, // Fetch up to 30 images
+        expression: `folder:Gallery`, 
+        max_results: 1000, 
       },
       auth: {
         username: API_KEY,
