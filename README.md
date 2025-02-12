@@ -20,3 +20,84 @@
 - `VITE_EMAILJS_TEMPLATE = EMAIL_JS_TEMPALTE`
 - `VITE_SERVICE_ID = EMAIL_JS_SERVICE_ID`
 - `VITE_PUBLIC_KEY = EMAIL_JS_PUBLIC_KEY`
+
+
+## Installation
+Get started
+
+
+**Clone the Repository**,
+
+```bash
+  git clone https://github.com/smileharbor-org/MERN-SH.git
+```
+**Change the Directory**: 
+```bash 
+cd  MERN-SH
+```
+**For Frontend:**
+Move to Frontend: 
+```bash 
+cd frontend
+ ```
+1. **Install  package**: 
+```bash
+npm install 
+```
+2. **Install Dependencies**:
+- Dot Env:
+```bash 
+npm install dotenv
+ ```
+ - lucide-react
+
+ ```bash
+ npm install lucide-react
+ ```
+ - notistack
+ ```bash
+ npm install notistack
+ ```
+- react-cookie-consent
+ ```bash
+ npm install react-cookie-consent
+ ```
+ - axios
+ ```bash
+ npm install axios
+ ```
+  - react-router-dom
+ ```bash
+ npm install react-router-dom
+ ```
+ **For Backend:**
+Move to Backend: 
+```bash 
+cd backend
+ ```
+1. **Install  package**: 
+```bash
+npm install 
+```
+2. **Install Dependencies**:
+- Dot Env:
+```bash 
+npm install dotenv
+ ```
+ - nodemon
+
+ ```bash
+ npm install nodemon
+ ```
+ - express
+ ```bash
+ npm install express
+ ```
+- cloudinary
+ ```bash
+ npm install cloudinary
+ ```
+ - axios
+ ```bash
+ npm install axios
+ ```
