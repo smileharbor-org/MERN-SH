@@ -66,6 +66,10 @@ npm install dotenv
  ```bash
  npm install axios
  ```
+  - Email.js
+ ```bash
+ npm install @emailjs/browser
+ ```
   - react-router-dom
  ```bash
  npm install react-router-dom
