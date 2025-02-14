@@ -37,10 +37,14 @@ function Gallery() {
             <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 w-full">
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
             {images.map((image) => (
-              <div key={image.id} className="w-full max-w-xs mx-auto rounded-lg overflow-hidden">
-                <img src={image.url} alt="Gallery" className="w-full h-[235px] object-fit rounded-md shadow-lg" />
+              <div key={image.id} className="mb-4 break-inside-avoid">
+                <img 
+                  src={image.url} 
+                  alt="Gallery" 
+                  className="w-full rounded-md shadow-lg"
+                />
               </div>
             ))}
           </div>
