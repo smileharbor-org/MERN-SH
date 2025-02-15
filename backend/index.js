@@ -13,7 +13,7 @@ cloudinary.config({
 })
 
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://smileharborfoundation.org",
     credentials:true
 }))
 
