@@ -7,6 +7,9 @@
 - `API_SECRET = YOUR_CLOUDINARY_API_SECRET`
 - `CLOUD_NAME =YOUR_CLOUDINARY_NAME `
 - `API_KEY =YOUR_CLOUDINARY_API_KEY` 
+API_SECRET = wYlV6u0wKQAkwrQEj9nkwvhLkZ4
+CLOUD_NAME = smileharbor
+API_KEY =  999815366838554
 
 2. **you need to add environment variables to your .env file in frontend**
 - `VITE_FACEBOOK = https://www.facebook.com/smileharbor/`
