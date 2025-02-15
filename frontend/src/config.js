@@ -9,4 +9,6 @@ export const VITE_GOOGLE_DONATION  = import.meta.env.VITE_GOOGLE_DONATION
 export const VITE_EMAILJS_TEMPLATE  = import.meta.env.VITE_EMAILJS_TEMPLATE
 export const VITE_SERVICE_ID  = import.meta.env.VITE_SERVICE_ID
 export const VITE_PUBLIC_KEY  = import.meta.env.VITE_PUBLIC_KEY
+export const VITE_BACKEND_URL  = import.meta.env.VITE_BACKEND_URL
+
 
