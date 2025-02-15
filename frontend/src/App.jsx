@@ -17,20 +17,20 @@ function App() {
         buttonText="Accept"
         cookieName="SmileHarbor"
         style={{ background: "#fff" ,color:"#000"}}
-        buttonStyle={{ color: "#4e503b", fontSize: "13px",borderRadius:"5px" }}
+        buttonStyle={{ color: "white", fontSize: "13px",backgroundColor:"green" }}
         expires={12}
         declineButtonText="Reject"
         declineButtonStyle={{
-        color: "#ffffff",
+        color: 'black',
         fontSize: "13px",
-        backgroundColor: "#ff4d4d",
-        borderRadius: "5px",
+        backgroundColor: "#fff",
+        border:"1px solid black",
         padding: "5px 10px",
         marginLeft: "10px",
       }}
       enableDeclineButton
       >
-        This website uses cookies.
+        This website uses cookies to enhance your experience.
       </CookieConsent>
     </>
   )
