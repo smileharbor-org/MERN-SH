@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {VITE_BACKEND_URL} from "../../config"
 
 function Gallery() {
   const [images, setImages] = useState([]);
@@ -11,7 +12,7 @@ function Gallery() {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/gallery");
+      const response = await axios.get(`${VITE_BACKEND_URL}/gallery`);
       const imageUrls = response.data.map((image, index) => ({
         id: image._id || index,
         url: image.secure_url,
@@ -44,6 +45,7 @@ function Gallery() {
                   src={image.url} 
                   alt="Gallery" 
                   className="w-full rounded-md shadow-lg"
+                  loading="lazy"
                 />
               </div>
             ))}
