@@ -1,10 +1,11 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card"; // Update the import path based on your setup
+import { Card, CardContent } from "@/components/ui/card"; 
 import { Badge } from "@/components/ui/badge";
-import Carousel from "react-material-ui-carousel"; // Replace this if you're switching to a different carousel library
-import image1 from "../../assets/image1.webp";
-import image2 from "../../assets/image2.webp";
-import image3 from "../../assets/image3.webp";
+import Carousel from "react-material-ui-carousel"; library
+import image1 from "../../assets/carousel/image1.webp";
+import image2 from "../../assets/carousel/image2.webp";
+import image3 from "../../assets/carousel/image3.webp";
+
 import { Stethoscope, BookOpen, Heart, Gift } from "lucide-react"; // Adjust based on your icon library
 
 const App = () => {
@@ -85,19 +86,18 @@ const App = () => {
             <p className="text-lg text-gray-600">Making a difference in our community through healthcare and education</p>
           </div>
 
-          {/* Medical Camp Section */}
+          {/* Book donation Section */}
           <div className="mb-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 lg:pr-12">
                 <div className="flex items-center gap-2 mb-4">
-                  <Stethoscope className="w-6 h-6 text-blue-600" />
-                  <Badge variant="secondary" className="text-blue-600 bg-blue-100">Healthcare Initiative</Badge>
+                <BookOpen className="w-6 h-6 text-blue-600" />
+                  <Badge variant="secondary" className="text-blue-600 bg-blue-100">Education Initiative</Badge>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Free Medical Camp for the Elderly</h2>
+                <h2 className="text-3xl font-bold text-gray-900">Kitabein, Kahaniyan & Kal" (Books, Stories & Tomorrow)</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  We organized a free medical camp for elderly citizens, providing comprehensive check-ups,
-                  consultations, and essential medications at no cost. This initiative helped raise awareness
-                  about healthcare and preventive measures, improving the quality of life for the elderly participants.
+                Smile Harbor Foundation’s book donation drive spreads the joy of reading among underprivileged children. By providing books, we nurture young minds, fuel creativity, and pave the way for a brighter future. Join us in shaping lives, one book at a time.  
+
                 </p>
               </div>
               <div className="grid grid-cols-3 gap-4">
@@ -124,7 +124,7 @@ const App = () => {
             </div>
           </div>
 
-          {/* Book Donation Section */}
+          {/* Covid health response Section */}
           <div className="mb-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1 grid grid-cols-3 gap-4">
@@ -149,34 +149,30 @@ const App = () => {
               </div>
               <div className="order-1 lg:order-2 space-y-6 lg:pl-12">
                 <div className="flex items-center gap-2 mb-4">
-                  <BookOpen className="w-6 h-6 text-pink-600" />
-                  <Badge variant="secondary" className="text-pink-600 bg-pink-100">Education Initiative</Badge>
+                  
+                  <Stethoscope className="w-6 h-6 text-blue-600" />
+                  <Badge variant="secondary" className="text-blue-600 bg-blue-100">Healthcare Initiative</Badge>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Book Donation Drive</h2>
+                <h2 className="text-3xl font-bold text-gray-900"> Swasthya Setu: COVID Care & Beyond</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Our Book Donation Drive collected a wide range of books for both an old age home
-                  and a school for specially-abled children. This initiative not only provided
-                  educational resources but also promoted the joy of learning and reading for people
-                  of all ages and abilities.
+                During the pandemic, we provided essential healthcare support, medical kits, awareness campaigns, and post-COVID recovery assistance to vulnerable communities. Our efforts continue to ensure better healthcare access, resilience, and preparedness for future health challenges.  
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Christmas Event Section */}
+          {/* Elderly Medical camp Event Section */}
           <div className="mb-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 lg:pr-12">
                 <div className="flex items-center gap-2 mb-4">
-                  <Gift className="w-6 h-6 text-red-600" />
-                  <Badge variant="secondary" className="text-red-600 bg-red-100">Holiday Initiative</Badge>
+                 
+                  <Stethoscope className="w-6 h-6 text-pink-600" />
+                  <Badge variant="secondary" className="text-pink-600 bg-pink-100">Healthcare Initiative</Badge>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Christmas Event at Orphanage</h2>
+                <h2 className="text-3xl font-bold text-gray-900">Zindagi Ke Saathi: Senior Health Camp</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  We hosted a heartwarming Christmas event at an orphanage, bringing smiles and festive cheer 
-                  to children in need. The celebration included games, gifts, and a warm meal, creating a 
-                  memorable and joyful experience for those who might not otherwise have had the opportunity 
-                  to celebrate.
+                A health initiative dedicated to the well-being of senior citizens, offering free medical check-ups, doctor consultations, and wellness guidance. We aim to provide care, respect, and companionship to our elderly, ensuring a healthier and happier life. 
                 </p>
               </div>
               <div className="grid grid-cols-3 gap-4">
@@ -198,6 +194,117 @@ const App = () => {
                     />
                   </Card>
                 </div>
+              </div>
+            </div>
+          </div>
+          {/* Orphanage event */}
+          <div className="mb-24">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1 grid grid-cols-3 gap-4">
+                <div className="col-span-2">
+                  <Card className="overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1530538987395-032d1800fdd0?auto=format&fit=crop&q=80&w=500"
+                      alt="Person holding books"
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                </div>
+                <div className="mt-12">
+                  <Card className="overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=500"
+                      alt="Reading together"
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 space-y-6 lg:pl-12">
+                <div className="flex items-center gap-2 mb-4">
+                  
+                  <Gift className="w-6 h-6 text-pink-600" />
+                  <Badge variant="secondary" className="text-pink-600 bg-pink-100">Holiday Initiative</Badge>
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900">Umeedon Ki Udaan: A Day of Joy & Care</h2>
+                <p className="text-gray-600 leading-relaxed">
+                A special day filled with love, learning, and laughter for orphaned children. Through interactive activities, storytelling, and gifts, we bring hope and happiness, making them feel cherished and supported in their journey of life.  
+                </p>
+              </div>
+            </div>
+          </div>
+
+          
+          {/* Bookshelf donation Section */}
+          <div className="mb-24">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6 lg:pr-12">
+                <div className="flex items-center gap-2 mb-4">
+                  
+                  <BookOpen className="w-6 h-6 text-red-600" />
+                  <Badge variant="secondary" className="text-red-600 bg-red-100">Education Initiative</Badge>
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900">Pustak Setu: Bridging Generations with Books</h2>
+                <p className="text-gray-600 leading-relaxed">
+                Our initiative installs bookshelves in schools, community centers, and orphanages to ensure continuous access to knowledge. With this effort, we create a culture of reading, bridge educational gaps, and inspire young learners.  
+                </p>
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="col-span-2">
+                  <Card className="overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=500"
+                      alt="Doctor checking elderly patient"
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                </div>
+                <div className="mt-12">
+                  <Card className="overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=500"
+                      alt="Medical consultation"
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          {/* Govt school event Section */}
+          <div className="mb-24">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1 grid grid-cols-3 gap-4">
+                <div className="col-span-2">
+                  <Card className="overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1530538987395-032d1800fdd0?auto=format&fit=crop&q=80&w=500"
+                      alt="Person holding books"
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                </div>
+                <div className="mt-12">
+                  <Card className="overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=500"
+                      alt="Reading together"
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 space-y-6 lg:pl-12">
+                <div className="flex items-center gap-2 mb-4">
+                  <BookOpen className="w-6 h-6 text-red-600" />
+                  <Badge variant="secondary" className="text-red-600 bg-red-100">Education Initiative</Badge>
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900">Nayi Soch, Nayi Shiksha</h2>
+                <p className="text-gray-600 leading-relaxed">
+                Volunteers engage with students in government schools, providing quality education, mentorship, and innovative learning methods. We strive to empower young minds with knowledge, skills, and confidence to shape a better future.
+                </p>
               </div>
             </div>
           </div>

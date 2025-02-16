@@ -5,6 +5,7 @@ import Ishan from "../../assets/teamMembers/ISHAN TAPADIA.webp";
 import Jigyasa from "../../assets/teamMembers/JIGYASA JHA.webp";
 import Samriddhi from "../../assets/teamMembers/SAMRIDDHI VISHWAKARMA.webp";
 import Sarthak from "../../assets/teamMembers/SARTHAK AGRAWAL.webp";
+import Aryan from "../../assets/teamMembers/ARYAN SARKAR.webp";
 const teamMembers = [
   {
     name: "Samriddhi Vishwakarma",
@@ -19,8 +20,7 @@ const teamMembers = [
   {
     name: "Aryan Sarkar",
     role: "Treasurer",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=400&fit=crop", // Dummy image
+    image: Aryan,
   },
   {
     name: "Sarthak Agrawal",
