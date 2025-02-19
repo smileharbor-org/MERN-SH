@@ -12,6 +12,7 @@ import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 // import {VITE_RAZORPAT_SECRET,VITE_RAZORPAY_KEY} from "../../config"
 import { VITE_GOOGLE_DONATION, VITE_EMAILJS_TEMPLATE, VITE_SERVICE_ID, VITE_PUBLIC_KEY } from "../../config"
 import emailjs from '@emailjs/browser';
+import donate from "./contents/donate.jpg"
 
 function Donate() {
   const [DataValues, SetDataValues] = useState({
@@ -200,13 +201,19 @@ function Donate() {
   }
   return (
     <>
-      <div className='flex justify-center gap-y-7 lg:gap-0 lg:justify-around items-center flex-col lg:flex-row h-min lg:h-min my-4 relative z-20 '
+      <div className='flex justify-center gap-y-7 lg:gap-0 lg:justify-around items-center flex-col  lg:flex-row-reverse h-min lg:h-min z-20 '
+      style={{
+        backgroundImage:`url(${donate})`,
+        backgroundPosition:"center",
+        backgroundRepeat:"no-repeat",
+        backgroundSize:"cover"
+      }}
       >
-        <h2 className='text-[24px] sm:text-[21px] md:text-[22px] lg:text-[32px] max-w-[390px] font-bold'>
+        <h2 className='text-[24px] sm:text-[21px] p-3 md:text-[22px] lg:text-[32px] font-bold max-w-[500px]'>
           If you wish to donate, please fill out the form below, and our team will reach out to you with the next steps.
         </h2>
         <SnackbarProvider maxSnack={3}>
-          <Card className='border w-[370px] lg:w-[500px] h-min py-6'>
+          <Card className='border w-[370px] lg:w-[500px] h-min py-6 my-2'>
             <form onSubmit={HandleSubmit}>
               <CardContent>
                 <CardTitle>
@@ -248,7 +255,7 @@ function Donate() {
                 <div className="grid w-full  items-center gap-2 my-5">
                   <Label htmlFor="message" className="text-[16px] lg:text-[24px]">Message</Label>
                   <textarea
-                    rows={5}
+                    // rows={5}
                     type="text"
                     className=' border rounded-sm p-2'
                     id="message"
