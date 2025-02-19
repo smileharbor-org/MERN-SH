@@ -164,7 +164,7 @@ function Contact() {
 
         }}
       >
-        <div className='flex flex-col '>
+        <div className='flex flex-col  lg:mt-[-100px]'>
           <p className=' text-[20px] sm:text-[20px] md:text-[20px] lg:text-[32px] font-bold p-1 text-left'>
             Small acts of kindness lead to big changes.
           </p>
@@ -221,7 +221,7 @@ function Contact() {
                 <div className="grid w-full  items-center gap-2 my-5">
                   <Label htmlFor="email" className="text-[16px] lg:text-[24px]">Message</Label>
                   <textarea
-                    rows={5}
+                    // rows={5}
                     type="text"
                     name='message'
                     value={message ||""}
