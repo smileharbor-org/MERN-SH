@@ -24,3 +24,6 @@
 - **Backend Development with Express & Cloudinary API**: Built a Node.js backend using Express.js for handling API requests. Integrated Cloudinary API to manage and store uploaded images securely. Tested APIs in Postman to ensure they function correctly.
 
 - **Razorpay Integration for Future Use**: Integrated Razorpay for handling future payment transactions securely.
+
+  **API POSTMAN Testing**: Attached below
+  ![Screenshot 2025-02-19 132830](https://github.com/user-attachments/assets/f5a0ef32-7af3-46e1-8430-15ebc69453aa)
