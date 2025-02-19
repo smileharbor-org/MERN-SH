@@ -1,30 +1,47 @@
 import React from "react";
 import FocusCards from "@/components/ui/focus-cards";
-
+import Akshat from "../../assets/teamMembers/AKSHAT GOLCHHA.webp";
+import Ishan from "../../assets/teamMembers/ISHAN TAPADIA.webp";
+import Jigyasa from "../../assets/teamMembers/JIGYASA JHA.webp";
+import Samriddhi from "../../assets/teamMembers/SAMRIDDHI VISHWAKARMA.webp";
+import Sarthak from "../../assets/teamMembers/SARTHAK AGRAWAL.webp";
+import Aryan from "../../assets/teamMembers/ARYAN SARKAR.webp";
 const teamMembers = [
   {
-    name: "Sarah Johnson",
-    role: "Founder",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&h=400&fit=crop",
+    name: "Samriddhi Vishwakarma",
+    role: "Co-Founder & General Secretary",
+    image: Samriddhi,
   },
   {
-    name: "Michael Chen",
-    role: "CTO",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=400&fit=crop",
+    name: "Akshat Golchha",
+    role: "Co-Founder & President",
+    image: Akshat,
   },
   {
-    name: "Emily Rodriguez",
-    role: "Lead Designer",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&h=400&fit=crop",
+    name: "Aryan Sarkar",
+    role: "Treasurer",
+    image: Aryan,
   },
   {
-    name: "David Kim",
-    role: "Senior Developer",
+    name: "Sarthak Agrawal",
+    role: "Joint Secretary",
+    image: Sarthak,
+  },
+  {
+    name: "Ishan Tapadia",
+    role: "Assistant President",
+    image: Ishan,
+  },
+  {
+    name: "Chirag Baradia",
+    role: "Chief Marketing Officer",
     image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=400&fit=crop", // Dummy image
+  },
+  {
+    name: "Jigayasa Jha",
+    role: "Chief Happiness Officer",
+    image: Jigyasa,
   },
 ];
 
