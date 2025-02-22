@@ -16,7 +16,7 @@ import bimage2 from "../../assets/bookShelf/image2.jpg";
 import svimage1 from "../../assets/schoolVisit/image1.jpeg"; //sv- school visit
 import svimage2 from "../../assets/schoolVisit/image2.jpeg";
 import { Stethoscope, BookOpen, Heart, Gift } from "lucide-react"; // Adjust based on your icon library
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const App = () => {
   const images = [image1, image2, image3];

@@ -5,7 +5,7 @@ import Jigyasa from "../../assets/teamMembers/JIGYASA JHA.webp";
 import Samriddhi from "../../assets/teamMembers/SAMRIDDHI VISHWAKARMA.webp";
 import Sarthak from "../../assets/teamMembers/SARTHAK AGRAWAL.webp";
 import Aryan from "../../assets/teamMembers/ARYAN SARKAR.webp";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const teamMembers = [
   {
