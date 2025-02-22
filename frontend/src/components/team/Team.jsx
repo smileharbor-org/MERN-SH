@@ -1,6 +1,7 @@
 //new
 import React from "react";
 import FocusCards from "@/components/ui/focus-cards";
+import { Helmet } from "react-helmet-async"; // react-helmet
 import Akshat from "../../assets/teamMembers/AKSHAT GOLCHHA.webp";
 import Ishan from "../../assets/teamMembers/ISHAN TAPADIA.webp";
 import Jigyasa from "../../assets/teamMembers/JIGYASA JHA.webp";
@@ -48,20 +49,27 @@ const teamMembers = [
 
 function Team() {
   return (
-    <div
-      className="min-h-screen bg-gradient-to-r from-blue-100 via-pink-100  to-yellow-100 py-24 px-4 sm:px-6 lg:px-8"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold mb-4">Meet Our Team</h2>
-          <p className=" text-lg max-w-2xl mx-auto">
-            We are a youth-driven organization dedicated to empowering underprivileged communities, spreading smiles, and creating opportunities for a brighter future.
-          </p>
-        </div>
+    <>
+      <Helmet >
+        <title>Team | SmileHarbor</title>
+        <link rel="canonical" href="https://smileharborfoundation/team" />
+      </Helmet>
+      <div
+        className="min-h-screen bg-gradient-to-r from-blue-100 via-pink-100  to-yellow-100 py-24 px-4 sm:px-6 lg:px-8"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold mb-4">Meet Our Team</h2>
+            <p className=" text-lg max-w-2xl mx-auto">
+              We are a youth-driven organization dedicated to empowering underprivileged communities, spreading smiles, and creating opportunities for a brighter future.
+            </p>
+          </div>
 
-        <FocusCards members={teamMembers} />
+          <FocusCards members={teamMembers} />
+        </div>
       </div>
-    </div>
+    </>
+
   );
 }
 

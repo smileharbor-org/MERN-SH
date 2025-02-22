@@ -13,6 +13,7 @@ import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 import { VITE_GOOGLE_DONATION, VITE_EMAILJS_TEMPLATE, VITE_SERVICE_ID, VITE_PUBLIC_KEY } from "../../config"
 import emailjs from '@emailjs/browser';
 import donate from "./contents/donate.jpg"
+import { Helmet } from 'react-helmet-async' // SEO
 
 function Donate() {
   const [DataValues, SetDataValues] = useState({
@@ -140,7 +141,7 @@ function Donate() {
       console.log(data)
 
     } catch (error) {
-     
+
       if (error) {
         enqueueSnackbar("Try Again Later", {
           variant: "warning",
@@ -201,13 +202,17 @@ function Donate() {
   }
   return (
     <>
+      <Helmet >
+        <title>Donate | SmileHarbor</title>
+        <link rel="canonical" href="https://smileharborfoundation/donate" />
+      </Helmet>
       <div className='flex justify-center gap-y-7 lg:gap-0 lg:justify-around items-center flex-col  lg:flex-row-reverse h-min lg:h-min z-20 '
-      style={{
-        backgroundImage:`url(${donate})`,
-        backgroundPosition:"center",
-        backgroundRepeat:"no-repeat",
-        backgroundSize:"cover"
-      }}
+        style={{
+          backgroundImage: `url(${donate})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover"
+        }}
       >
         <h2 className='text-[24px] sm:text-[21px] p-3 md:text-[22px] lg:text-[32px] font-bold max-w-[500px]'>
           If you wish to donate, please fill out the form below, and our team will reach out to you with the next steps.

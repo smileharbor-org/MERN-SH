@@ -8,9 +8,10 @@ import {
 } from "@/components/ui/card"  // card
 import { Button } from '@/components/ui/button'  // button
 import bg from "./image/bg.jpg"
-import { VITE_GOOGLE_SHEETS_API,VITE_SERVICE_ID,VITE_PUBLIC_KEY,VITE_EMAILJS_TEMPLATE } from "../../config"
+import { VITE_GOOGLE_SHEETS_API, VITE_SERVICE_ID, VITE_PUBLIC_KEY, VITE_EMAILJS_TEMPLATE } from "../../config"
 import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 import emailjs from '@emailjs/browser';
+import { Helmet } from 'react-helmet-async' //SEO
 
 function Contact() {
   const [formData, SetFormData] = useState({
@@ -155,6 +156,10 @@ function Contact() {
   }
   return (
     <>
+      <Helmet >
+        <title>Contact | SmileHarbor</title>
+        <link rel="canonical" href="https://smileharborfoundation/contact" />
+      </Helmet>
       <div className='w-full min-h-min lg:h-screen  flex justify-center flex-col lg:flex-row lg:justify-around items-center gap-3 lg:gap-0'
         style={{
           backgroundImage: `URL(${bg})`,
@@ -224,7 +229,7 @@ function Contact() {
                     // rows={5}
                     type="text"
                     name='message'
-                    value={message ||""}
+                    value={message || ""}
                     onChange={HandleChange}
                     placeholder="Enter Message"
                     className='border rounded-sm p-2' />
