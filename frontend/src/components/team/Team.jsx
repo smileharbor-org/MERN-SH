@@ -5,6 +5,7 @@ import Jigyasa from "../../assets/teamMembers/JIGYASA JHA.webp";
 import Samriddhi from "../../assets/teamMembers/SAMRIDDHI VISHWAKARMA.webp";
 import Sarthak from "../../assets/teamMembers/SARTHAK AGRAWAL.webp";
 import Aryan from "../../assets/teamMembers/ARYAN SARKAR.webp";
+import { Helmet } from "react-helmet";
 
 const teamMembers = [
   {
@@ -46,7 +47,12 @@ const teamMembers = [
 ];
 
 function Team() {
+  
   return (
+    <> <Helmet>
+    <title>Team | Smile Harbor</title>
+    <link rel="canonical" href="https://smileharborfoundation/team" />
+  </Helmet>
     <div className="min-h-screen bg-gradient-to-r from-blue-100 via-pink-100 to-yellow-100 py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
@@ -80,6 +86,7 @@ function Team() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
