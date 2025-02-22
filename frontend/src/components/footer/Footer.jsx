@@ -16,7 +16,7 @@ function Footer() {
   ]
   return (
     <>
-      <div className=' h-min lg:h-[20vh] w-full bg-[#0c0c14] grid content-center gap-y-2 p-2'>
+      <div className=' h-min lg:h-[20vh] w-full bg-[#161e35] grid content-center gap-y-2 p-2'>
         <div className='flex justify-center items-center gap-x-9 p-2'>
           {/* mapping objects */}
           {
