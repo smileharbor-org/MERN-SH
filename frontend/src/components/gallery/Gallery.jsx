@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { VITE_BACKEND_URL } from "../../config";
 import { Helmet } from "react-helmet-async"; // react-helmet
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 function Gallery() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -58,10 +60,10 @@ function Gallery() {
               <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
                 {images.map((image) => (
                   <div key={image.id} className="mb-4 break-inside-avoid">
-                    <img
+                    <LazyLoadImage
                       src={image.secure_url}
                       alt="Gallery"
-                      loading="lazy" // Lazy loading for better performance
+                      effect="blur"
                       className="w-full rounded-md shadow-lg transition-opacity duration-500 opacity-0"
                       onLoad={(e) => e.target.classList.remove("opacity-0")}
                     />
