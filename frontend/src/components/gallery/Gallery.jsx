@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { VITE_BACKEND_URL } from "../../config";
+// import { VITE_BACKEND_URL } from "../../config";
 import { Helmet } from "react-helmet-async"; // react-helmet
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -17,7 +17,7 @@ function Gallery() {
 
   const fetchImages = async (cursor = null) => {
     try {
-      const response = await axios.get(`${VITE_BACKEND_URL}/gallery`, {
+      const response = await axios.get(`https://mern-sh-2ah6.onrender.com/gallery`, {
         params: { next_cursor: cursor },
       });
       console.log(response)
