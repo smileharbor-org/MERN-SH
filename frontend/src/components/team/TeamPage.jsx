@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from 'react'
-import Team from './Team'
 import Loader from '../errorpage/Loader'
-const TeamPage = lazy(()=>import("./Team"))
+const Team = lazy(()=>import("./Team"))
 
 function TeamPage() {
   return (

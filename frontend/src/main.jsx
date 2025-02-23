@@ -5,11 +5,11 @@ import './index.css';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Loader from './components/errorpage/Loader.jsx'
-const Donate = lazy(() => import("./components/donate/Donate.jsx"))
+const Donate = lazy(() => import("./components/donate/DonatePage.jsx"))
 const Notfound = lazy(() => import("./components/errorpage/Notfound.jsx"))
 const Gallery = lazy(() => import('./components/gallery/GalleryPage.jsx'))
-const Contact = lazy(() => import('./components/contact/Contact.jsx'))
-const Team = lazy(() => import('./components/team/Team.jsx'))
+const Contact = lazy(() => import('./components/contact/ContactPage.jsx'))
+const Team = lazy(() => import('./components/team/TeamPage.jsx'))
 import { HelmetProvider } from 'react-helmet-async';
 
 createRoot(document.getElementById('root')).render(
