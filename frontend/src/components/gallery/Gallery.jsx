@@ -9,6 +9,7 @@ function Gallery() {
   const [loading, setLoading] = useState(true);
   const [nextCursor, setNextCursor] = useState(null); // For pagination
   const [loadingMore, setLoadingMore] = useState(false);
+  const [errMsg,setError] = useState("")
 
   useEffect(() => {
     fetchImages();
@@ -19,11 +20,12 @@ function Gallery() {
       const response = await axios.get(`${VITE_BACKEND_URL}/gallery`, {
         params: { next_cursor: cursor },
       });
-      // console.log(response)
+      console.log(response)
       setImages((prev) => [...prev, ...response.data.images]);
       setNextCursor(response.data.next_cursor);
     } catch (error) {
       console.error("Error fetching images:", error);
+      setError(error)
     } finally {
       setLoading(false);
       setLoadingMore(false);
@@ -48,7 +50,9 @@ function Gallery() {
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold mb-4">Gallery</h2>
           </div>
-
+          {
+            errMsg && <p className="text-2xl text-center">Try Again Later. Server Busy</p>
+          }
           {loading ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {[...Array(4)].map((_, index) => (
