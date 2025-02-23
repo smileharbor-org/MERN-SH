@@ -19,7 +19,7 @@ function Gallery() {
       const response = await axios.get(`${VITE_BACKEND_URL}/gallery`, {
         params: { next_cursor: cursor },
       });
-
+      // console.log(response)
       setImages((prev) => [...prev, ...response.data.images]);
       setNextCursor(response.data.next_cursor);
     } catch (error) {
@@ -58,12 +58,12 @@ function Gallery() {
           ) : (
             <>
               <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
-                {images.map((image) => (
-                  <div key={image.id} className="mb-4 break-inside-avoid">
+                {images.map((image,i) => (
+                  <div key={`${i.id}-${i}`}  className="mb-4 break-inside-avoid">
                     <LazyLoadImage
                       src={image.secure_url}
                       alt="Gallery"
-                      effect="blur"
+                      // effect="blur"
                       className="w-full rounded-md shadow-lg transition-opacity duration-500 opacity-0"
                       onLoad={(e) => e.target.classList.remove("opacity-0")}
                     />
