@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Team-Cyp7wGuO.js","assets/index-Aba-m4Or.js","assets/index-quLRHvb7.css"])))=>i.map(i=>d[i]);
+import{r as a,_ as r,j as e,L as s}from"./index-Aba-m4Or.js";const t=a.lazy(()=>r(()=>import("./Team-Cyp7wGuO.js"),__vite__mapDeps([0,1,2])));function o(){return e.jsx(e.Fragment,{children:e.jsx(a.Suspense,{fallback:e.jsx(s,{}),children:e.jsx(t,{})})})}export{o as default};
