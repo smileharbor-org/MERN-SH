@@ -16,6 +16,7 @@ import bimage2 from "../../assets/bookShelf/image2.jpg";
 import svimage1 from "../../assets/schoolVisit/image1.jpeg"; //sv- school visit
 import svimage2 from "../../assets/schoolVisit/image2.jpeg";
 import { Stethoscope, BookOpen, Heart, Gift } from "lucide-react"; // Adjust based on your icon library
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const App = () => {
   const images = [image1, image2, image3];
@@ -37,9 +38,9 @@ const App = () => {
                 backgroundImage: `url(${image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                height:"70vh",
+                height: "70vh",
                 width: "100%",
-                backgroundRepeat:"no-repeat"
+                backgroundRepeat: "no-repeat"
               }}
             >
 
@@ -137,7 +138,8 @@ const App = () => {
                 <div className="grid grid-cols-3 gap-4">
                   <div className="col-span-2">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src={bdimage1}
                         alt="Person holding books"
                         className="w-full h-64 object-cover"
@@ -146,11 +148,15 @@ const App = () => {
                   </div>
                   <div className="mt-12">
                     <Card className="overflow-hidden">
-                      <img
+
+                      <LazyLoadImage
+                        effect="blur"
                         src={bdimage2}
                         alt="Person holding books and a puppy"
                         className="w-full h-64 object-cover"
                       />
+
+
                     </Card>
                   </div>
                 </div>
@@ -163,17 +169,19 @@ const App = () => {
                 <div className="order-2 lg:order-1 grid grid-cols-3 gap-4">
                   <div className="col-span-2">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src="https://www.gavi.org/sites/default/files/vaccineswork/2021/Thumb/shutterstock_1720887019_h2.jpg"
                         alt="Covid"
                         className="w-full h-64 object-cover"
                       />
                     </Card>
                   </div>
-                  
+
                   <div className="mt-12">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src="https://www.unicef.org/india/sites/unicef.org.india/files/styles/hero_extended/public/UN0517137_0.jpg.webp?itok=x0fbSB_P"
                         alt="Covid"
                         className="w-full h-64 object-cover"
@@ -233,7 +241,8 @@ const App = () => {
                 <div className="grid grid-cols-3 gap-4">
                   <div className="col-span-2">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src={hcimage1}
                         alt="Doctor checking elderly patient"
                         className="w-full h-64 object-cover"
@@ -242,7 +251,8 @@ const App = () => {
                   </div>
                   <div className="mt-12">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src={hcimage2}
                         alt="Medical Consultation"
                         className="w-full h-64 object-cover"
@@ -258,7 +268,8 @@ const App = () => {
                 <div className="order-2 lg:order-1 grid grid-cols-3 gap-4">
                   <div className="col-span-2">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src={oimage1}
                         alt="Santa giving out sweets"
                         className="w-full h-64 object-cover"
@@ -267,7 +278,8 @@ const App = () => {
                   </div>
                   <div className="mt-12">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src={oimage2}
                         alt="Kids drawing together"
                         className="w-full h-64 object-cover"
@@ -324,7 +336,8 @@ const App = () => {
                 <div className="grid grid-cols-3 gap-4">
                   <div className="col-span-2">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src={bimage1}
                         alt="Team"
                         className="w-full h-64 object-cover"
@@ -333,7 +346,8 @@ const App = () => {
                   </div>
                   <div className="mt-12">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src={bimage2}
                         alt="Inaguration"
                         className="w-full h-64 object-cover"
@@ -350,7 +364,8 @@ const App = () => {
                 <div className="order-2 lg:order-1 grid grid-cols-3 gap-4">
                   <div className="col-span-2">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src={svimage1}
                         alt="School kids"
                         className="w-full h-64 object-cover"
@@ -359,7 +374,8 @@ const App = () => {
                   </div>
                   <div className="mt-12">
                     <Card className="overflow-hidden">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         src={svimage2}
                         alt="Distributing candies"
                         className="w-full h-64 object-cover"
