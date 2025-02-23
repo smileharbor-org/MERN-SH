@@ -25,7 +25,7 @@ const gallery = async (req, res) => {
     // Optimize image URLs by adding Cloudinary transformations
     const optimizedImages = response.data.resources.map((image) => ({
       id: image.public_id,
-      secure_url: `${image.secure_url.replace('/upload/', '/upload/q_auto:low,f_auto,w_auto,h_auto/')}`, // Auto quality, format, and resize to 600px
+      secure_url: `${image.secure_url.replace('/upload/', '/upload/q_auto:low,f_auto,w_340/')}`, // Auto quality, format, and resize to 600px
     }));
 
     res.status(200).json({
