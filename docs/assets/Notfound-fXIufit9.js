@@ -1,0 +1,1 @@
+import{j as e}from"./index-7pIdQYho.js";const t="/assets/F1-BeN4xUcm.jpg";function n(){return e.jsx(e.Fragment,{children:e.jsx("div",{className:"w-full h-screen flex justify-center items-center",children:e.jsx("div",{children:e.jsx("img",{src:t,width:400,height:400,alt:"Not Found",loading:"lazy"})})})})}export{n as default};
