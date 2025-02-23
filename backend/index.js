@@ -12,11 +12,20 @@ cloudinary.config({
     api_secret: process.env.API_SECRET
 })
 
+const allowedOrigins = [
+    "http://localhost:5173", 
+    "https://smileharborfoundation.org"
+]
 app.use(cors({
-    origin: "https://smileharborfoundation.org",
-    // origin:"http://localhost:5173",
-    credentials:true
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
 }))
 
-app.use('/',GalleryRoute) // route for gallery photos
-app.listen(port,()=>console.log(`Server running at ${port}`))
+app.use('/', GalleryRoute) // route for gallery photos
+app.listen(port, () => console.log(`Server running at ${port}`))
