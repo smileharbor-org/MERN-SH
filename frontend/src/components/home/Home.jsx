@@ -23,7 +23,7 @@ const App = () => {
   const images = [image1, image2, image3];
 
   return (
-    <> <Helmet>
+    <> <Helmet> {/**SEO */}
     <title>Home | Smile Harbor</title>
     <link rel="canonical" href="https://smileharborfoundation" />
   </Helmet>

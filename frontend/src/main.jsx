@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css';
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {  HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Loader from './components/errorpage/Loader.jsx'
 const Donate = lazy(() => import("./components/donate/DonatePage.jsx"))
 const Notfound = lazy(() => import("./components/errorpage/Notfound.jsx"))
@@ -14,7 +14,7 @@ import { HelmetProvider } from 'react-helmet-async';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <Router>
       <Suspense fallback={<Loader />}>
         <HelmetProvider>
           <Routes>
@@ -30,6 +30,6 @@ createRoot(document.getElementById('root')).render(
 
       </Suspense>
 
-    </BrowserRouter>
+    </Router>
   </StrictMode>,
 )

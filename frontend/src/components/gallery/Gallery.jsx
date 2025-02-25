@@ -17,7 +17,7 @@ function Gallery() {
 
   const fetchImages = async (cursor = null) => {
     try {
-      const response = await axios.get(`https://mern-sh-2ah6.onrender.com/gallery`, {
+      const response = await axios.get(`https://mern-sh.onrender.com/gallery`, {
         params: { next_cursor: cursor },
       });
       console.log(response)
@@ -41,7 +41,7 @@ function Gallery() {
 
   return (
     <>
-      <Helmet >
+      <Helmet > {/**SEO */}
         <title>Gallery | SmileHarbor</title>
         <link rel="canonical" href="https://smileharborfoundation/gallery" />
       </Helmet>

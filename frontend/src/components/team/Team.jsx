@@ -49,7 +49,7 @@ const teamMembers = [
 function Team() {
   
   return (
-    <> <Helmet>
+    <> <Helmet> {/**SEO */}
     <title>Team | Smile Harbor</title>
     <link rel="canonical" href="https://smileharborfoundation/team" />
   </Helmet>
