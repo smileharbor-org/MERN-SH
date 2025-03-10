@@ -37,7 +37,7 @@ const teamMembers = [
     name: "Chirag Baradia",
     role: "Chief Marketing Officer",
     image:
-      "https://forums.lindale.io/uploads/default/original/1X/0b92184f9ae10ddf6918f3b1fd5aa2bd26958a2c.png",
+      "https://static.vecteezy.com/system/resources/previews/005/276/776/non_2x/logo-icon-person-on-white-background-free-vector.jpg",
   },
   {
     name: "Jigayasa Jha",
