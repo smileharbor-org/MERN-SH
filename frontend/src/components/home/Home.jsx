@@ -5,16 +5,16 @@ import Carousel from "react-material-ui-carousel";
 import image1 from "../../assets/carousel/image1.webp";
 import image2 from "../../assets/carousel/image2.webp";
 import image3 from "../../assets/carousel/image3.webp";
-import bdimage1 from "../../assets/bookDonation/image1.jpg"; //bd- book donation
-import bdimage2 from "../../assets/bookDonation/image2.jpg";
-import hcimage1 from "../../assets/healthCamp/image1.jpeg"; //hc- health camp
-import hcimage2 from "../../assets/healthCamp/image2.jpeg";
-import oimage1 from "../../assets/orphanage/image1.jpeg"; //o- orphanage
-import oimage2 from "../../assets/orphanage/image2.jpeg";
-import bimage1 from "../../assets/bookShelf/image1.jpeg"; //b- bookshelf
-import bimage2 from "../../assets/bookShelf/image2.jpg";
-import svimage1 from "../../assets/schoolVisit/image1.jpeg"; //sv- school visit
-import svimage2 from "../../assets/schoolVisit/image2.jpeg";
+import bdimage1 from "../../assets/bookDonation/image1.webp"; //bd- book donation
+import bdimage2 from "../../assets/bookDonation/image2.webp";
+import hcimage1 from "../../assets/healthCamp/image1.webp"; //hc- health camp
+import hcimage2 from "../../assets/healthCamp/image2.webp";
+import oimage1 from "../../assets/orphanage/image1.webp"; //o- orphanage
+import oimage2 from "../../assets/orphanage/image2.webp";
+import bimage1 from "../../assets/bookShelf/image1.webp"; //b- bookshelf
+import bimage2 from "../../assets/bookShelf/image2.webp";
+import svimage1 from "../../assets/schoolVisit/image1.webp"; //sv- school visit
+import svimage2 from "../../assets/schoolVisit/image2.webp";
 import { Stethoscope, BookOpen, Heart, Gift } from "lucide-react"; // Adjust based on your icon library
 import { Helmet } from "react-helmet";
 
