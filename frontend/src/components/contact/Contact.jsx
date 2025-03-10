@@ -156,7 +156,7 @@ function Contact() {
   }
   return (
     <>
-      <Helmet >
+      <Helmet > {/**SEO */}
         <title>Contact | SmileHarbor</title>
         <link rel="canonical" href="https://smileharborfoundation/contact" />
       </Helmet>

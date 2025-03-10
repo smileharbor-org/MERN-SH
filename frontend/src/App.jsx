@@ -2,14 +2,15 @@ import React from 'react'
 import { Outlet, useLocation } from "react-router-dom" // outlet -> router dom
 import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
-import Home from './components/home/Home'
+// import Home from './components/home/Home'
 import CookieConsent from "react-cookie-consent"; // cookie consent
+import MainPage from './components/home/MainPage'
 function App() {
   const location = useLocation()
   return (
     <>
       <Navbar />
-      {location.pathname === "/" && <Home />}
+      {location.pathname === "/" && <MainPage />}
       <Outlet />
       <Footer />
       <CookieConsent

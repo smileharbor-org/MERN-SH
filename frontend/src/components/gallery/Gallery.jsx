@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { VITE_BACKEND_URL } from "../../config";
+// import { VITE_BACKEND_URL } from "../../config";
 import { Helmet } from "react-helmet-async"; // react-helmet
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 function Gallery() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [nextCursor, setNextCursor] = useState(null); // For pagination
   const [loadingMore, setLoadingMore] = useState(false);
+  const [errMsg,setError] = useState("")
 
   useEffect(() => {
     fetchImages();
@@ -14,14 +17,15 @@ function Gallery() {
 
   const fetchImages = async (cursor = null) => {
     try {
-      const response = await axios.get(`${VITE_BACKEND_URL}/gallery`, {
+      const response = await axios.get(`https://mern-sh.onrender.com/gallery`, {
         params: { next_cursor: cursor },
       });
-
+      console.log(response)
       setImages((prev) => [...prev, ...response.data.images]);
       setNextCursor(response.data.next_cursor);
     } catch (error) {
       console.error("Error fetching images:", error);
+      setError(error)
     } finally {
       setLoading(false);
       setLoadingMore(false);
@@ -37,7 +41,7 @@ function Gallery() {
 
   return (
     <>
-      <Helmet >
+      <Helmet > {/**SEO */}
         <title>Gallery | SmileHarbor</title>
         <link rel="canonical" href="https://smileharborfoundation/gallery" />
       </Helmet>
@@ -46,7 +50,9 @@ function Gallery() {
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold mb-4">Gallery</h2>
           </div>
-
+          {
+            errMsg && <p className="text-2xl text-center">Try Again Later. Server Busy</p>
+          }
           {loading ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {[...Array(4)].map((_, index) => (
@@ -56,12 +62,12 @@ function Gallery() {
           ) : (
             <>
               <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
-                {images.map((image) => (
-                  <div key={image.id} className="mb-4 break-inside-avoid">
-                    <img
+                {images.map((image,i) => (
+                  <div key={`${i.id}-${i}`}  className="mb-4 break-inside-avoid">
+                    <LazyLoadImage
                       src={image.secure_url}
                       alt="Gallery"
-                      loading="lazy" // Lazy loading for better performance
+                      // effect="blur"
                       className="w-full rounded-md shadow-lg transition-opacity duration-500 opacity-0"
                       onLoad={(e) => e.target.classList.remove("opacity-0")}
                     />

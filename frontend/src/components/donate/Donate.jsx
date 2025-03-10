@@ -10,7 +10,7 @@ import {
 import { Button } from '@/components/ui/button'  // button
 import { SnackbarProvider, enqueueSnackbar } from 'notistack'
 // import {VITE_RAZORPAT_SECRET,VITE_RAZORPAY_KEY} from "../../config"
-import { VITE_GOOGLE_DONATION, VITE_EMAILJS_TEMPLATE, VITE_SERVICE_ID, VITE_PUBLIC_KEY } from "../../config"
+import { VITE_GOOGLE_SHEETS_API, VITE_EMAILJS_TEMPLATE, VITE_SERVICE_ID, VITE_PUBLIC_KEY } from "../../config"
 import emailjs from '@emailjs/browser';
 import donate from "./contents/donate.jpg"
 import { Helmet } from 'react-helmet-async' // SEO
@@ -95,7 +95,7 @@ function Donate() {
       const FormData = {
         TimeStamp: DateTime, ...DataValues
       }
-      const res = await fetch(VITE_GOOGLE_DONATION, {
+      const res = await fetch(VITE_GOOGLE_SHEETS_API, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -137,9 +137,7 @@ function Donate() {
             })
           }
         })
-      const data = await res.json();
-      console.log(data)
-
+      
     } catch (error) {
 
       if (error) {
@@ -202,7 +200,7 @@ function Donate() {
   }
   return (
     <>
-      <Helmet >
+      <Helmet > {/**SEO */}
         <title>Donate | SmileHarbor</title>
         <link rel="canonical" href="https://smileharborfoundation/donate" />
       </Helmet>
