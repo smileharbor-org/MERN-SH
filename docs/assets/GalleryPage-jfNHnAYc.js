@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Gallery-CbwbXapy.js","assets/index-CaLaNg2X.js","assets/index-DXze6Hl3.css","assets/index-DgCnoMSx.js"])))=>i.map(i=>d[i]);
+import{r,_ as a,j as e,L as s}from"./index-CaLaNg2X.js";const t=r.lazy(()=>a(()=>import("./Gallery-CbwbXapy.js"),__vite__mapDeps([0,1,2,3])));function n(){return e.jsx(e.Fragment,{children:e.jsx(r.Suspense,{fallback:e.jsx(s,{}),children:e.jsx(t,{})})})}export{n as default};
