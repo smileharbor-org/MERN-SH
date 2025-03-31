@@ -25,5 +25,7 @@
 
 - **Razorpay Integration for Future Use**: Integrated Razorpay for handling future payment transactions securely.
 
+- **Google Analytics Tool** : Connected google analytics tool to ensure the usage of the webiste.
+
   **API POSTMAN Testing**: Attached below
   ![Screenshot 2025-02-19 132830](https://github.com/user-attachments/assets/f5a0ef32-7af3-46e1-8430-15ebc69453aa)
